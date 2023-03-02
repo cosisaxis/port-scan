@@ -1,6 +1,7 @@
 import socket
 
 def scan(target, ports):
+    print('\n' + 'Starting scan for ' + str(target))
     for port in range(1, ports):
         scan_port(target, port)
 
@@ -10,11 +11,8 @@ def scan_port(ipaddress, port):
            s.connect((ipaddress, port))
            print("[+] Port Opened " + str(port))
            s.close()
-
-
-
     except:
-        print("[-] Ports Closed " + str(port))
+        pass
 
 
 targets = input("[*]Enter Targets to scan(split them by ,):")
